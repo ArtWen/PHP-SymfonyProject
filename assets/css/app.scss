@@ -1,6 +1,7 @@
 @import "~bootswatch/dist/Slate/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/Slate/bootswatch";
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 .navbar-authors {
   font-size: 0.65em;
@@ -14,3 +15,8 @@ body {
    flex: 1;
    min-height: 600px
  }
+
+.center-row{
+  display: flex;
+  justify-content: center;
+}
