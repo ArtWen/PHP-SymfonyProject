@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * wygenerowane poprzez php bin/console make:auth
+     * wygenerowane poprzez php bin/console make:auth (wybrana opcja 1 Login form authenticator)
      *
      * @Route("/login", name="app_login")
      */

@@ -22,7 +22,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements PasswordAuthenticatedInterface
 {
-    //wygenerowane poprzez php bin/console make:auth
+    //wygenerowane poprzez php bin/console make:auth (wybrana opcja 1 Login form authenticator)
     use TargetPathTrait;
 
     public const LOGIN_ROUTE = 'app_login';
