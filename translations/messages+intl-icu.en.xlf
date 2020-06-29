@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="index.title">
+        <source>index.title</source>
+        <target>Welcome!</target>
+      </trans-unit>
+      <trans-unit id="navbar.header_start">
+        <source>navbar.header_start</source>
+        <target>MVC Symfony Project</target>
+      </trans-unit>
+      <trans-unit id="navbar.header_end">
+        <source>navbar.header_end</source>
+        <target> by Artur Wenda &amp; Maciej Moryń</target>
+      </trans-unit>
+      <trans-unit id="navbar.home">
+        <source>navbar.home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="navbar.admin_panel">
+        <source>navbar.admin_panel</source>
+        <target>Admin Panel</target>
+      </trans-unit>
+      <trans-unit id="navbar.about">
+        <source>navbar.about</source>
+        <target>About</target>
+      </trans-unit>
+      <trans-unit id="dropdown.login">
+        <source>dropdown.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="dropdown.logout">
+        <source>dropdown.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="footer.names">
+        <source>footer.names</source>
+        <target> - Artur Wenda &amp; Maciej Moryń</target>
+      </trans-unit>
+      <trans-unit id="project.title">
+        <source>project.title</source>
+        <target>Title: </target>
+      </trans-unit>
+      <trans-unit id="project.summary">
+        <source>project.summary</source>
+        <target>Summary: </target>
+      </trans-unit>
+      <trans-unit id="project.description">
+        <source>project.description</source>
+        <target>Description: </target>
+      </trans-unit>
+      <trans-unit id="project.date">
+        <source>project.date</source>
+        <target>Date: </target>
+      </trans-unit>
+      <trans-unit id="project.author">
+        <source>project.author</source>
+        <target>Author: </target>
+      </trans-unit>
+      <trans-unit id="project.project_list">
+        <source>project.project_list</source>
+        <target>Project list</target>
+      </trans-unit>
+      <trans-unit id="project.actions">
+        <source>project.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="project.no_projects_found">
+        <source>project.no_projects_found</source>
+        <target>No project were found in the database!</target>
+      </trans-unit>
+      <trans-unit id="project.project_label">
+        <source>project.project_label</source>
+        <target>Project</target>
+      </trans-unit>
+      <trans-unit id="action.project_view">
+        <source>action.project_view</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="action.project_edit">
+        <source>action.project_edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="action.project_delete">
+        <source>action.project_delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="action.project_add">
+        <source>action.project_add</source>
+        <target>New project</target>
+      </trans-unit>
+      <trans-unit id="security.login_label">
+        <source>security.login_label</source>
+        <target>Login!</target>
+      </trans-unit>
+      <trans-unit id="security.login">
+        <source>security.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="security.logout">
+        <source>security.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="security.logged_as">
+        <source>security.logged_as</source>
+        <target>You are logged in as </target>
+      </trans-unit>
+      <trans-unit id="security.please_sign_in">
+        <source>security.please_sign_in</source>
+        <target>Please sign in!</target>
+      </trans-unit>
+      <trans-unit id="security.username_label">
+        <source>security.username_label</source>
+        <target>Username: </target>
+      </trans-unit>
+      <trans-unit id="security.password_label">
+        <source>security.password_label</source>
+        <target>Password: </target>
+      </trans-unit>
+      <trans-unit id="admin.admin_label">
+        <source>admin.admin_label</source>
+        <target>Admin Panel</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

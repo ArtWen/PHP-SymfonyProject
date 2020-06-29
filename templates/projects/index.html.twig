@@ -11,6 +11,6 @@
                 <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</span>
                 <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
             </p>
-            <p><span class="metadata"><b>Summary:</b> {{ project.summary }}</span></p>
+            <p><span class="metadata"><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></p>
         {% endfor %}
 {% endblock %}
