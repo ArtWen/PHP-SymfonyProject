@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
+//generated as part of composer create-project symfony/website-skeleton command
 class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
