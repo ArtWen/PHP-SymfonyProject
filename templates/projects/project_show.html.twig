@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'projects_project_show' %}
+
+{% block main %}
+
+    <h1 style="margin-top: 10px"><b>{{ project.title }}</b></h1>
+    <p>
+        <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }} </span>
+        <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
+    </p>
+
+    {{ project.description | markdown_to_html }}
+
+{% endblock %}
