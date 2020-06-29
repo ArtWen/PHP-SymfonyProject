@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin Panel - view{% endblock %}
+{% block title %}{{ 'admin.view_label'|trans }}{% endblock %}
 
 {% block main %}
     <h1>{{ project.title }} </h1>
@@ -20,13 +20,13 @@
 
     <div class="section">
         <a href="{{ path('admin_edit_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> Edit
+            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.project_edit'|trans }}
         </a>
     </div>
 
     <div class="section">
         <a href="{{ path('admin_delete_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i> Delete
+            <i class="fa fa-trash" aria-hidden="true"></i> {{ 'action.project_delete'|trans }}
         </a>
     </div>
 

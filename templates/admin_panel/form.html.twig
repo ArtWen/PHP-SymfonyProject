@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ action }} project{% endblock %}
+{% block title %}{{ action }}{{ 'project.project_label'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ action }} project</h1>
+    <h1>{{ action }}{{ 'project.project_label'|trans }}</h1>
     {{ form(form) }}
 {% endblock %}
