@@ -44,11 +44,11 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	Widok edycji danych, czyli możliwośc edycji danych użytkownika
 *	Widok edycji projektu, gdzie można edytować i usunąć projekt
 *	Widok projektu
-*	Widok newsa
 	
 ## Kontrolery
 - 	ProjectController, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt
 -   AdminPanelController, pozwala na zarządzanie całą listą dodanych projektów, w tym listowanie, edycja, usunięcie, dodanie nowego
+-   AboutController, odpowiedzialny za wyświetlenie strony about
 - 	SecurityController, obsługuje logowanie i wylogowywanie się na stronie
 
 ## Modele
