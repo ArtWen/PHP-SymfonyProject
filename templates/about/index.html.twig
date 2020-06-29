@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'about.title'|trans }}{% endblock %}
+
+{% block body_id 'about_index' %}
+
+{% block main %}
+    <!--Twig stworzony przez: Maciej Moryń-->
+
+    <p style="margin-top: 15px">
+        <span>
+            <b>{{ 'about.description'|trans }}</b>
+        </span>
+    </p>
+
+    <p style="margin-top: 10px">
+        <span><b>{{ 'about.authors'|trans }}</b>{{ 'about.authors_value'|trans }}<br></span>
+        <span><b>{{ 'about.contact'|trans }}</b>{{ 'about.contact_value'|trans }}</span>
+    </p>
+
+{% endblock %}
