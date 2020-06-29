@@ -129,6 +129,47 @@
         <source>admin.view_label</source>
         <target>Admin Panel - View</target>
       </trans-unit>
+
+      <trans-unit id="edit.title">
+        <source>edit.title</source>
+        <target>Title: </target>
+      </trans-unit>
+      <trans-unit id="edit.summary">
+        <source>edit.summary</source>
+        <target>Summary: </target>
+      </trans-unit>
+      <trans-unit id="edit.description">
+        <source>edit.description</source>
+        <target>Description: </target>
+      </trans-unit>
+      <trans-unit id="edit.post_date">
+        <source>edit.post_date</source>
+        <target>Post date</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
+      <trans-unit id="admin.view_label">
+        <source>admin.view_label</source>
+        <target>Admin Panel - View</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
