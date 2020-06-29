@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'projects_index' %}
+
+{% block main %}
+
+        {% for project in projects %}
+                <h2><a href="{{ path('projects_project') }}">{{ projects.title }}</a></h2>
+                <p>
+                        <span class="metadata"><i class="fa fa-calendar"></i>{{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</span>
+                        <span class="metadata"><i class="fa fa-user">{{ post.user.username }}</i></span>
+                </p>
+        {% endfor %}
+{% endblock %}
