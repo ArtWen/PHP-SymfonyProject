@@ -39,7 +39,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * funkcja z poradnika przesłanego na platfornie moodle
+     * funkcja z poradnika przesłanego na platfornie moodle (potrzebna tylko do testów aplikacji)
      * @Route("new_user", name="new_user")
      */
     public function newUser(UserPasswordEncoderInterface $passwordEncoder)
@@ -55,7 +55,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * funkcja z poradnika przesłanego na platfornie moodle
+     * funkcja z poradnika przesłanego na platfornie moodle (potrzebna tylko do testów aplikacji)
      * @Route("new_admin", name="new_admin")
      */
     public function newAdmin(UserPasswordEncoderInterface $passwordEncoder)
