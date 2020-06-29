@@ -32,7 +32,7 @@ class AdminPanelController extends AbstractController
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $project = new Project();
         $project ->setUser($this->getUser());
-
+        $project ->setDate(new \DateTime());
         $form = $this->createForm("App\Form\ProjectType", $project);
 
         $form->handleRequest($request);
