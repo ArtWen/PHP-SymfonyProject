@@ -13,7 +13,7 @@
         <p class="m-b-0"><strong>Summary</strong>: {{ project.summary }}</p>
     </div>
 
-    {{ project.description }}
+    {{ project.description | markdown_to_html }}
 {% endblock %}
 
 {% block sidebar %}
