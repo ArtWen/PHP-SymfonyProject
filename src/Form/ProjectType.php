@@ -30,7 +30,8 @@ class ProjectType extends AbstractType
                 'label' => 'Description'])
             ->add('date',DateTimeType::class,[
                 'label' => 'Post date'])
-            ->add('Save', SubmitType::class)
+            ->add('Save', SubmitType::class,[
+                'label' => 'Save'])
         ;
     }
 
