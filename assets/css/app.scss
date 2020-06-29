@@ -2,3 +2,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/Slate/bootswatch";
 
+.navbar-authors {
+  font-size: 0.65em;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
+}
+.body-container {
+   flex: 1;
+   min-height: 600px
+ }
