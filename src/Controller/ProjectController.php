@@ -6,10 +6,17 @@ use App\Entity\Project;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ProjectController
+ * @package App\Controller
+ * Kontroler wygenerowany za pomocą komendy php bin/console make:controller
+ */
+
 class ProjectController extends AbstractController
 {
     /**
      * @Route("/projects", name="projects")
+     * Funkcja stworzona przez: Maciej Moryń
      */
     public function index()
     {
@@ -22,6 +29,7 @@ class ProjectController extends AbstractController
 
     /**
      * @Route("/projects/{id}",  name="projects_project")
+     * Funkcja stworzona przez: Maciej Moryń
      */
     public function projectShow(Project $project)
     {
