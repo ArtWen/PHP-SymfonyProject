@@ -54,5 +54,23 @@ class SecurityController extends AbstractController
         return new Response("<html><head></head><body>dodano użytkownika</body></html>");
     }
 
+    /**
+     * funkcja z poradnika przesłanego na platfornie moodle
+     * @Route("new_admin", name="new_admin")
+     */
+    public function newAdmin(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $user=new User();
+        $user->setusername('admin');
+        $user->setPassword($passwordEncoder->encodePassword(
+            $user, 'admin'));
+        $roles[]='ROLE_ADMIN';
+        $user->setRoles($roles);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($user);
+        $entityManager->flush();
+        return new Response("<html><head></head><body>dodano administratora</body></html>");
+    }
+
 
 }

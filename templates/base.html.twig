@@ -19,6 +19,11 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ path('index') }}">Home</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Admin Panel</a>
+                        </li>
+                    {% endif %}
                     <li class="dropdown nav-item pointer">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
                             <i class="fa fa-user" aria-hidden="true"></i>
