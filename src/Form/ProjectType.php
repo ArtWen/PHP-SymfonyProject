@@ -22,16 +22,16 @@ class ProjectType extends AbstractType
         $builder
             ->add('title',TextType::class,[
                 'attr' => ['autofocus' => true],
-                'label' => 'Title'])
+                'label' => 'edit.title'])
             ->add('summary', TextareaType::class,[
-                'label' => 'Summary'])
+                'label' => 'edit.summary'])
             ->add('description', TextareaType::class,[
                 'attr' => ['rows' => 20],
-                'label' => 'Description'])
+                'label' => 'edit.description'])
             ->add('date',DateTimeType::class,[
-                'label' => 'Post date'])
+                'label' => 'edit.post_date'])
             ->add('Save', SubmitType::class,[
-                'label' => 'Save'])
+                'label' => 'edit.save'])
         ;
     }
 
