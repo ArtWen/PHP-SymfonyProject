@@ -44,27 +44,26 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin: 0;
 }
 
 .navbar {
-  float: top;
   font-size: $fontSize;
   color: black;
   background-color: #bcb8c9;
+  min-height: 60px;
 }
 
 .footer {
-  float: bottom;
   font-size: $fontSize;
   color: black;
   background-color: #bcb8c9;
+  justify-content: center;
 }
 
 .headerTitle {
-  width: 30%;
   display: flex;
   flex-direction: row;
-  float: start;
   justify-content: start;
 }
 
@@ -79,19 +78,17 @@ body {
 }
 
 .navButtons {
-  width: 70%;
   display: flex;
   flex-direction: row;
-  float: end;
   justify-content: end;
 }
 
 .navButton {
   color: black;
-  background-color: #8e8a9b;
   text-align: center;
   text-decoration: none;
-  width: 10%;
+  padding: 10px;
+  margin: 0 5px;
 }
 
 .navButton:hover {
@@ -99,5 +96,4 @@ body {
   background-color: #8e8a9b;
   text-align: center;
   text-decoration: none;
-  width: 10%;
 }
