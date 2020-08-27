@@ -4,14 +4,13 @@
 
 {% block main %}
     <!--Twig stworzony przez: Maciej Moryń-->
-
-        {% for project in projects %}
-            <h2 style="margin-top: 10px"><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h2>
-            <p>
-                <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</span>
-                <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
-            </p>
-            <p><span class="metadata"><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></p>
-        {% endfor %}
+    {% for project in projects %}
+        <h2 style="margin-top: 10px"><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h2>
+        <p>
+            <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</span>
+            <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
+        </p>
+        <p><span class="metadata"><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></p>
+    {% endfor %}
 
 {% endblock %}

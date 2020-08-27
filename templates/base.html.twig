@@ -9,77 +9,49 @@
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ path('index') }}">{{ 'navbar.header_start'|trans }}<span class="navbar-authors">{{ 'navbar.header_end'|trans }}</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="navbar row">
+            <div class="headerTitle link">
+                <a href="{{ path('index') }}">
+                    {{ 'navbar.header_start'|trans }}<span class="navbar-authors">{{ 'navbar.header_end'|trans }}</span>
+                </a>
+            </div>
+            <div class="navButtons">
+                <a class="navButton link" href="{{ path('index') }}">
+                    <i class="fa fa-home" aria-hidden="true"></i> {{ 'navbar.home'|trans }}
+                </a>
 
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('index') }}">{{ 'navbar.home'|trans }}</a>
-                    </li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('admin_panel') }}"> {{ 'navbar.admin_panel'|trans }} </a>
-                        </li>
-                    {% endif %}
-                    <li class="dropdown nav-item pointer">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="user">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right user" role="menu" aria-labelledby="user">
-                            {% if app.user %}
-                                <li>
-                                    <a class="dropdown-item" href="{{ path('app_logout') }}">
-                                        <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'dropdown.logout'|trans }}
-                                    </a>
-                                </li>
-                            {% else %}
-                                <li>
-                                    <a class="dropdown-item" href="{{ path('app_login') }}">
-                                        <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'dropdown.login'|trans }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('about_index') }}">{{ 'navbar.about'|trans }}</a>
-                    </li>
-                </ul>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="navButton link" href="{{ path('admin_panel') }}">
+                        {{ 'navbar.admin_panel'|trans }}
+                    </a>
+                {% endif %}
+
+                <a class="navButton link" href="{{ path('about_index') }}">
+                    <i class="fa fa-info" aria-hidden="true"></i> {{ 'navbar.about'|trans }}
+                </a>
+
+                {% if app.user %}
+                    <a class="navButton link" href="{{ path('app_logout') }}">
+                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i> {{ 'dropdown.logout'|trans }}
+                    </a>
+                {% else %}
+                    <a class="navButton link" href="{{ path('app_login') }}">
+                        <i class="fa fa-sign-in-alt" aria-hidden="true"></i> {{ 'dropdown.login'|trans }}
+                    </a>
+                {% endif %}
             </div>
         </nav>
 
-        <div class="container body-container">
+        <div class="main">
             {% block body %}
-                <div class="row">
-                    <div class="col-sm-9">
-                        {% block main %}{% endblock %}
-                    </div>
-                    <div class="col-sm-3">
-                        <div>{% block sidebar %}{% endblock %}</div>
-                    </div>
-                </div>
+                {% block main %} {% endblock %}
             {% endblock %}
         </div>
 
         {% block footer %}
-            <footer class="bg-light">
-                <div class="container">
-                    <div class="row center-row">
-                        <div class="col-md-6 text-center">
-                            <p>© {{ 'now'|date('Y') }}{{ 'footer.names'|trans }}</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            <div class="footer row">
+                © {{ 'now'|date('Y') }}{{ 'footer.names'|trans }}
+            </div>
         {% endblock %}
     </body>
 </html>
