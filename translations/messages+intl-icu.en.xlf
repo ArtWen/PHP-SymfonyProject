@@ -142,6 +142,14 @@
         <source>edit.description</source>
         <target>Description: </target>
       </trans-unit>
+    <trans-unit id="edit.upload_image">
+      <source>edit.upload_image</source>
+      <target>Upload image: </target>
+    </trans-unit>
+      <trans-unit id="edit.upload_files">
+        <source>edit.upload_files</source>
+        <target>Upload project files: </target>
+      </trans-unit>
       <trans-unit id="edit.post_date">
         <source>edit.post_date</source>
         <target>Post date</target>

@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /*  wygenerowane komendą php bin/console make:form
  *  dla klasy Project
@@ -28,6 +30,16 @@ class ProjectType extends AbstractType
             ->add('description', TextareaType::class,[
                 'attr' => ['rows' => 20],
                 'label' => 'edit.description'])
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'edit.upload_image',
+                'required' => false])
+            ->add('projectPackage', VichFileType::class, [
+                'label' => 'Upload project files:',
+                'required' => false,
+                'delete_label' => 'Delete?',
+                'download_label' => static function (Project $project) {
+                    return $project->getProjectPackageName();}
+            ])
             ->add('date',DateTimeType::class,[
                 'label' => 'edit.post_date'])
             ->add('Save', SubmitType::class,[
