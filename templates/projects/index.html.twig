@@ -6,10 +6,23 @@
     {#START MADE BY MACIEJ MORYŃ#}
     {% for project in projects %}
         <div class="hasMarginTop">
-            <h3><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h3>
-            <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
-            <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
-            <div><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></div>
+            <a href="{{ path('projects_project', {id: project.id}) }}" class="row linkNoDecoration">
+
+                <div class="col15 hasHorizontalPadding">
+                    {% if project.image is not null %}
+                        <div><img class="image" src="{{ vich_uploader_asset(project,'imageFile') }}"></div>
+                    {% endif %}
+                </div>
+
+                <div class="col85 hasHorizontalPadding">
+                    <h3><b>{{ project.title }}</b></h3>
+                    <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
+                    <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
+                    <div><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></div>
+                </div>
+
+            </a>
+
         </div>
     {% endfor %}
     {#END MADE BY MACIEJ MORYŃ#}

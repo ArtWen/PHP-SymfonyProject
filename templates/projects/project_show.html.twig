@@ -8,6 +8,9 @@
         <h3><b>{{ project.title }}</b></h3>
         <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
         <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
+        {% if project.image is not null %}
+            <div class="hasMarginTop"><img class="imageLarge" src="{{ vich_uploader_asset(project,'imageFile') }}"></div>
+        {% endif %}
         <div class="hasMarginTop">{{ project.description | markdown_to_html }}</div>
     </div>
     {#END MADE BY MACIEJ MORYŃ#}
