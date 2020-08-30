@@ -1,0 +1,45 @@
+//START MADE BY MACIEJ MORYŃ
+.tableRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tableHeader {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.tableCell {
+  font-size: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.tableTextLeft {
+  text-align: left;
+}
+
+.tableTextCenter {
+  text-align: center;
+}
+
+.tableTextRight {
+  text-align: right;
+}
+
+.cell15 {
+  width: 15%
+}
+
+.cell25 {
+  width: 25%;
+}
+
+.cell45 {
+  width: 45%;
+}
+//END MADE BY MACIEJ MORYŃ
