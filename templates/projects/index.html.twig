@@ -6,7 +6,7 @@
     {#START MADE BY MACIEJ MORYŃ#}
     {% for project in projects %}
         <div class="hasMarginTop">
-            <a href="{{ path('projects_project', {id: project.id}) }}" class="row projectLink">
+            <a href="{{ path('projects_project', {id: project.id}) }}" class="row linkNoDecoration">
 
                 <div class="col15 hasHorizontalPadding">
                     {% if project.image is not null %}
