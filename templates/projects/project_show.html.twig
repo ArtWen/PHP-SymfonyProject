@@ -3,12 +3,12 @@
 {% block body_id 'projects_project_show' %}
 
 {% block main %}
-    {#MADE BY MACIEJ MORYŃ#}
+    {#START MADE BY MACIEJ MORYŃ#}
     <div class="hasMarginTop">
         <h3><b>{{ project.title }}</b></h3>
         <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
         <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
-        <div>{{ project.description | markdown_to_html }}</div>
+        <div class="hasMarginTop">{{ project.description | markdown_to_html }}</div>
     </div>
     {#END MADE BY MACIEJ MORYŃ#}
 {% endblock %}

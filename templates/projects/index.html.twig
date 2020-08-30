@@ -3,7 +3,7 @@
 {% block body_id 'projects_index' %}
 
 {% block main %}
-    {#MADE BY MACIEJ MORYŃ#}
+    {#START MADE BY MACIEJ MORYŃ#}
     {% for project in projects %}
         <div class="hasMarginTop">
             <h3><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h3>
