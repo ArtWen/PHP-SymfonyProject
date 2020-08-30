@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'projects_search' %}
+
+{% block main %}
+    <!-- Twig stworzony przez Artur Wenda -->
+    {{ form(form) }}
+
+    {% if projects is defined %}
+        {{ block("main", "projects/index.html.twig") }}
+    {% endif %}
+{% endblock %}
