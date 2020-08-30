@@ -8,11 +8,11 @@
         <div class="hasMarginTop">
             <a href="{{ path('projects_project', {id: project.id}) }}" class="row linkNoDecoration">
 
-                <div class="col15 hasHorizontalPadding">
-                    {% if project.image is not null %}
-                        <div><img class="image" src="{{ vich_uploader_asset(project,'imageFile') }}"></div>
-                    {% endif %}
-                </div>
+                {% if project.image is not null %}
+                    <div class="col15 hasHorizontalPadding">
+                        <div style="margin: auto 0px;"><img class="image" src="{{ vich_uploader_asset(project,'imageFile') }}"></div>
+                    </div>
+                {% endif %}
 
                 <div class="col85 hasHorizontalPadding">
                     <h3><b>{{ project.title }}</b></h3>
