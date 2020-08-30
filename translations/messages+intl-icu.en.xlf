@@ -97,6 +97,10 @@
         <source>action.project_add</source>
         <target>New project</target>
       </trans-unit>
+      <trans-unit id="action.project_download">
+        <source>action.project_download</source>
+        <target>Download project files</target>
+      </trans-unit>
       <trans-unit id="security.login_label">
         <source>security.login_label</source>
         <target>Login!</target>
