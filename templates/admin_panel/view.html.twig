@@ -3,33 +3,26 @@
 {% block title %}{{ 'admin.view_label'|trans }}{% endblock %}
 
 {% block main %}
-    <h1>{{ project.title }} </h1>
-    <p>
-        <span><i class="fa fa-calendar"></i> {{ project.date|format_datetime('long', 'medium', '', 'UTC') }}</span>
-        <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
-    </p>
+    {#START MADE BY MACIEJ MORYŃ#}
+    <div class="row hasMarginTop">
 
-    <div class="bg-primary section">
-        <p class="m-b-0"><strong>Summary</strong>: {{ project.summary }}</p>
+        <div class="col70">
+            <h1>{{ project.title }} </h1>
+            <div><i class="fa fa-calendar"></i> {{ project.date|format_datetime('long', 'medium', '', 'UTC') }}</div>
+            <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
+            <div><strong>Summary</strong>: {{ project.summary }}</div>
+            <div class="hasMarginTop">{{ project.description | markdown_to_html }}</div>
+        </div>
+
+        <div class="col30 hasHorizontalPadding">
+            <a href="{{ path('admin_edit_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-success">
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.project_edit'|trans }}
+            </a>
+            <a href="{{ path('admin_delete_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-danger">
+                <i class="fa fa-trash" aria-hidden="true"></i> {{ 'action.project_delete'|trans }}
+            </a>
+        </div>
+
     </div>
-
-    {{ project.description | markdown_to_html }}
-{% endblock %}
-
-{% block sidebar %}
-
-    <div class="section">
-        <a href="{{ path('admin_edit_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.project_edit'|trans }}
-        </a>
-    </div>
-
-    <div class="section">
-        <a href="{{ path('admin_delete_project', {id: project.id}) }}" class="btn btn-lg btn-block btn-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i> {{ 'action.project_delete'|trans }}
-        </a>
-    </div>
-
-    {{ parent() }}
-
+    {#END MADE BY MACIEJ MORYŃ#}
 {% endblock %}

@@ -3,14 +3,14 @@
 {% block body_id 'projects_index' %}
 
 {% block main %}
-    <!--Twig stworzony przez: Maciej Moryń-->
+    {#START MADE BY MACIEJ MORYŃ#}
     {% for project in projects %}
-        <h2 style="margin-top: 10px"><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h2>
-        <p>
-            <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</span>
-            <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
-        </p>
-        <p><span class="metadata"><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></p>
+        <div class="hasMarginTop">
+            <h3><a href="{{ path('projects_project', {id: project.id}) }}"><b>{{ project.title }}</b></a></h3>
+            <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
+            <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
+            <div><b>{{ 'project.summary'|trans }}</b> {{ project.summary }}</span></div>
+        </div>
     {% endfor %}
-
+    {#END MADE BY MACIEJ MORYŃ#}
 {% endblock %}
