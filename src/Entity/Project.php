@@ -259,4 +259,11 @@ class Project
     }
 
 
+    /**
+     * dodane na potrzeby użycia array_unique
+     */
+    public function __toString() {
+        return (string)$this->id;
+    }
+
 }

@@ -7,6 +7,7 @@
     {{ form(form) }}
 
     {% if projects is defined %}
+        <h2>Found {{ projects|length }} matching results for "{{ query }}"</h2>
         {{ block("main", "projects/index.html.twig") }}
     {% endif %}
 {% endblock %}

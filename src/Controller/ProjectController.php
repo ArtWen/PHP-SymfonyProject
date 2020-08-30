@@ -47,9 +47,9 @@ class ProjectController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $searchQuery = $form->get('search_query')->getData();
+            $projects = $this->getDoctrine()->getRepository(Project::class)->findBySearchQuery($searchQuery);
 
-            $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
-            return $this ->render('projects/project_search.html.twig', ['form' =>$form->createView(), 'projects' => $projects]);
+            return $this ->render('projects/project_search.html.twig', ['form' =>$form->createView(), 'projects' => $projects, 'query' => $searchQuery]);
         }
         return $this ->render('projects/project_search.html.twig', ['form' =>$form->createView()]);
     }
