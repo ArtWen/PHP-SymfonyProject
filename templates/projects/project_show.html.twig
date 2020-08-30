@@ -3,14 +3,12 @@
 {% block body_id 'projects_project_show' %}
 
 {% block main %}
-    <!--Twig stworzony przez: Maciej Moryń-->
-
-    <h1 style="margin-top: 10px"><b>{{ project.title }}</b></h1>
-    <p>
-        <span><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }} </span>
-        <span><i class="fa fa-user"></i> {{ project.user.username }}</span>
-    </p>
-
-    {{ project.description | markdown_to_html }}
-
+    {#MADE BY MACIEJ MORYŃ#}
+    <div class="hasMarginTop">
+        <h3><b>{{ project.title }}</b></h3>
+        <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
+        <div><i class="fa fa-user"></i> {{ project.user.username }}</div>
+        <div>{{ project.description | markdown_to_html }}</div>
+    </div>
+    {#END MADE BY MACIEJ MORYŃ#}
 {% endblock %}
