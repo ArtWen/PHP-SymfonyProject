@@ -21,6 +21,10 @@
         <source>navbar.home</source>
         <target>Home</target>
       </trans-unit>
+    <trans-unit id="navbar.search">
+      <source>navbar.search</source>
+      <target>Search</target>
+    </trans-unit>
       <trans-unit id="navbar.admin_panel">
         <source>navbar.admin_panel</source>
         <target>Admin Panel</target>

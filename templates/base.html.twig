@@ -20,6 +20,9 @@
                 <a class="navButton link" href="{{ path('index') }}">
                     <i class="fa fa-home" aria-hidden="true"></i> {{ 'navbar.home'|trans }}
                 </a>
+                <a class="navButton link" href="{{ path('projects_search') }}">
+                    <i class="fa fa-search" aria-hidden="true"></i> {{ 'navbar.search'|trans }}
+                </a>
 
                 {% if is_granted('ROLE_ADMIN') %}
                     <a class="navButton link" href="{{ path('admin_panel') }}">
