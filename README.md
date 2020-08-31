@@ -17,8 +17,9 @@ Członkowie grupy: Moryń Maciej, Wenda Artur
 		+ [Users](#users)
 
 # Informacje ogólne
-Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach.
-Użytkownicy mogą przeglądać wszystkie udostępnione opisy a administracja może dodawać, edytować lub usuwać posty.
+Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach, wraz z możliwością wyszukania projektów po tytule oraz podsumowaniu.
+Użytkownicy mogą przeglądać wszystkie udostępnione opisy oraz pobierać pliki projektów (jeśli zostały dołączone), a administracja może dodawać, edytować lub usuwać posty.
+
 ## Konfiguracja i uruchamianie
 Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem można znaleźć tutaj: [instrukcja.md](/Konfiguracja/instrukcja.md)
 
@@ -47,7 +48,7 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	_Widok edycji projektu_, gdzie można edytować i usunąć projekt.
 	
 ## Kontrolery
-* 	_ProjectController_, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt.
+* 	_ProjectController_, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt; pozwala również na wyszukiwanie projektów po tekście i podsumowaniu.
 *	_AboutController_, odpowiedzialny za wyświetlenie strony about.
 *	_SecurityController_, obsługuje logowanie i wylogowywanie się na stronie.
 *	_AdminPanelController_, pozwala na zarządzanie całą listą dodanych projektów, w tym listowanie, edycja, usunięcie, dodanie nowego.
