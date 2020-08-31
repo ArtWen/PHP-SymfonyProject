@@ -17,8 +17,9 @@ Członkowie grupy: Moryń Maciej, Wenda Artur
 		+ [Users](#users)
 
 # Informacje ogólne
-Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach.
-Użytkownicy mogą przeglądać wszystkie udostępnione opisy a administracja może dodawać, edytować lub usuwać posty.
+Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach, wraz z możliwością wyszukania projektów po tytule oraz podsumowaniu.
+Użytkownicy mogą przeglądać wszystkie udostępnione opisy oraz pobierać pliki projektów (jeśli zostały dołączone), a administracja może dodawać, edytować lub usuwać posty.
+
 ## Konfiguracja i uruchamianie
 Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem można znaleźć tutaj: [instrukcja.md](/Konfiguracja/instrukcja.md)
 
@@ -38,67 +39,91 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 # Warstwy MVC
 
 ## Widoki
-* 	Widok index, na stronie głównej prezentujący w formie listy dodane opisy projektów, możliwość przejścia do panelu logowania oraz zakładki about
-*	Panel administracyjny projektów, lista projektów wraz z możliwością dodania, modyfikacji i usunięcia projektu
-*	Widok logowania, czyli logowanie się na stronę
-*	Widok edycji danych, czyli możliwośc edycji danych użytkownika
-*	Widok edycji projektu, gdzie można edytować i usunąć projekt
-*	Widok projektu
+* 	Widok _index_ na stronie głównej, prezentujący w formie listy dodane opisy projektów. Widok posiada możliwość przejścia do panelu logowania oraz zakładki about.
+*	Widok _projektu,_ który zawiera więcej informacji o projekcie niż prezentuje to lista na widoku index.
+*	Widok _search_, na którym można wyszukiwać projekty.
+*	Widok _about_, zawierający informacje o aplikacji oraz dane kontaktowe twórców.
+*	Widok _logowania_, za pomocą którego użytkownik może się zalogować do aplikacji.
+*	_Panel administracyjny projektów_, czyli lista projektów wraz z możliwością ich dodania, modyfikacji i usunięcia.
+*	_Widok edycji projektu_, gdzie można edytować i usunąć projekt.
 	
 ## Kontrolery
-- 	ProjectController, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt
--   AdminPanelController, pozwala na zarządzanie całą listą dodanych projektów, w tym listowanie, edycja, usunięcie, dodanie nowego
--   AboutController, odpowiedzialny za wyświetlenie strony about
-- 	SecurityController, obsługuje logowanie i wylogowywanie się na stronie
+* 	_ProjectController_, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt; pozwala również na wyszukiwanie projektów po tekście i podsumowaniu.
+*	_AboutController_, odpowiedzialny za wyświetlenie strony about.
+*	_SecurityController_, obsługuje logowanie i wylogowywanie się na stronie.
+*	_AdminPanelController_, pozwala na zarządzanie całą listą dodanych projektów, w tym listowanie, edycja, usunięcie, dodanie nowego.
 
 ## Modele
 
 ### Project
-- id: int
-- title: string
-- summary: string 
-- description: string
-- date: DateTime
-- user: User
-- getTitle(): string?
-- setTitle(): void
-- getDescription(): string?
-- setDescription(): void
-- getDate(): DateTime
-- setDate(): void
-- getUser(): User?
-- setUser(): void
-- getSummary(): string?
-- setSummary(): void
+*	id: _int_
+*	user: _User_
+*	title: _string_
+*	summary: _string_
+*	description: _Text_
+*	date: _DateTime_
+*	updated: _DateTime?_
+*	image: _string?_
+*	imageFile: _File?_
+*	projectPackageName: _string?_
+*	projectPackage: _File?_
+*	getId(): _int?_
+*	getUser(): _User?_
+*	setUser(_User?_): _self_
+*	getTitle(): _string?_
+*	setTitle(_string_): _self_
+*	getSummary(): _string?_
+*	setSummary(_string_): _self_
+*	getDescription(): _string?_
+*	setDescription(_string_): _self_
+*	getDate(): _DateTimeInterface?_
+*	setDate(_DateTimeInterface_): _self_
+*	getUpdated(): _DateTimeInterface?_
+*	setUpdated(_DateTimeInterface?_): _void_
+*	getImage(): _string?_
+*	setImage(_string?_): _void_
+*	getImageFile(): _File?_
+*	setImageFile(_File?_): _void_
+*	getProjectPackageName(): _string?_
+*	setProjectPackageName(_string?_): _void_
+*	getProjectPackage(): _File?_
+*	setProjectPackage(_File?_): _void_
 
 ### User
-- id: int
-- username: string
-- password: string
-- roles: array
-- getId(): int?
-- getUsername(): string?
-- setUsername(): void
-- getPassword(): string?
-- setPassword(): void
-- getRoles(): array
-- setRoles(): void
-- getSalt(): string?
-- eraseCredentials(): void
+*	id: _int_
+*	username: _string_
+*	roles: _Json_
+*	password: _string_
+*	projects: _Project[]_
+*	getId(): _int?_
+*	getUsername(): _string_
+*	setUsername(_string_): _self_
+*	getRoles(): _Array_
+*	setRoles(_Array_): _self_
+*	getPassword(): _string_
+*	setPassword(_string_): _self_
+*	getSalt(): _void_
+*	eraseCredentials(): _void_
+*	getProjects(): _Collection_
+*	addProject(_Project_): _self_
+*	removeProject(_Project_): _self_
 
 # Baza Danych
 ## Tabele
 
 ### project
-- id: int(11)
-- user_id: int(11)
-- title: varchar(255)
-- summary: varchar(255)
-- description: longtext
-- date: datetime
+*	id: _int(11)_
+*	user_id: _int(11)_
+*	title: _varchar(255)_
+*	summary: _varchar(255)_
+*	description: _longtext_
+*	date: _datetime_
+*	updated: _datetime_
+*	image: _varchar(255)_
+*	project_package_name: _varchar(255)_
 
 ### users
-- id: int(11)
-- username: varchar(180)
-- password: varchar(255)
-- roles: longtext
+*	id: _int(11)_
+*	username: _varchar(180)_
+*	roles: _longtext_
+*	password: _varchar(255)_
