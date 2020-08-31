@@ -89,19 +89,23 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	setProjectPackage(_File?_): _void_
 
 ### User
-- id: int
-- username: string
-- password: string
-- roles: array
-- getId(): int?
-- getUsername(): string?
-- setUsername(): void
-- getPassword(): string?
-- setPassword(): void
-- getRoles(): array
-- setRoles(): void
-- getSalt(): string?
-- eraseCredentials(): void
+*	id: _int_
+*	username: _string_
+*	roles: _Json_
+*	password: _string_
+*	projects: _Project[]_
+*	getId(): _int?_
+*	getUsername(): _string_
+*	setUsername(_string_): _self_
+*	getRoles(): _Array_
+*	setRoles(_Array_): _self_
+*	getPassword(): _string_
+*	setPassword(_string_): _self_
+*	getSalt(): _void_
+*	eraseCredentials(): _void_
+*	getProjects(): _Collection_
+*	addProject(_Project_): _self_
+*	removeProject(_Project_): _self_
 
 # Baza Danych
 ## Tabele
