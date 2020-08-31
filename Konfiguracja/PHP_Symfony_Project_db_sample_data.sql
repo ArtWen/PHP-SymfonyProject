@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 30 Cze 2020, 00:40
+-- Czas generowania: 31 Sie 2020, 21:06
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `php_symfony_project_db`
 --
-CREATE DATABASE IF NOT EXISTS `php_symfony_project_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `php_symfony_project_db`;
 
 -- --------------------------------------------------------
 
@@ -35,16 +33,19 @@ CREATE TABLE `project` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `summary` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` datetime NOT NULL
+  `date` datetime NOT NULL,
+  `updated` datetime DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `project_package_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `project`
 --
 
-INSERT INTO `project` (`id`, `user_id`, `title`, `summary`, `description`, `date`) VALUES
-(10, 2, 'Gra mobilna na platformę android \"Endless Runner\"', 'Gra mobilna bazowana na popularnej grze \"Geometry Dash\" pisana w pythonie. Modułowe nieskończone poziomy wraz z systemem najwyższych poziomów. Możliwa do uruchomienia na Androidzie oraz Windowsie!', 'Projekt został rozpoczęty jako zaliczenie przedmiotu na studiach \"Programowanie Komponentowe\". Głównym celem było napisanie gry mobilnej używając języka Python. Żeby to osiągnąć użyliśmy Kivy framework który jest open source biblioteką do pythona pozwalającą pisać aplikacje na różne platformy. Pomysł na grę był bazowany na popularnej grze \"Geometry Dash\"\r\n\r\nGra jest bardzo prosta, jedynym celem jest przetrwać jak najdłużej, a jak sama nazwa wskazuje gra nie ma końca. Gracz zdobywa punkty podczas gry wraz z upływem czasu ale gra także staje się coraz trudniejsza. Po przegranej na koniec można wpisać swój wynik na listę najlepszych wyników jeżeli osiągnęło się ich wystarczającą ilość.\r\n\r\nGra została zaprojektowana tak żeby przeszkody były modułami co pozwala dodawać/edytować przeszkody nawet w notatniku. W grze nie ma poziomów, poszczególne przeszkody są wczytywane losowo aż gracz przegra.\r\n\r\n<h4>Autorzy</h4>\r\n<ul class=\"list-group list-group-flush grow\">\r\n<li>Artur Wenda</li>\r\n<li>Maciej Moryń</li>\r\n<li>Kamil Chmielewski</li>\r\n<li>Paulina Osińska (Grafika)</li>\r\n</ul>', '2020-06-30 00:37:00'),
-(11, 2, 'Gra mobilna \"Codname-G\" pisana w Unity', 'Oryginalny pomysł na grę zręcznościowo-logiczną stworzoną w zespole na studiach. Gra pisana głównie na platformę android z możliwością budowy na ios.', 'Projekt został rozpoczęty jako zaliczenie przedmiotu na studiach \"Projekt zespołowy\". Głównym celem było napisanie gry mobilnej w małym zespole używając Silnika Gier Unity. Główną platformą docelową jest był androib ale dzięki wybranemu silnikowi bardzo łatwo można zmodyfikować projekt żeby działał na urządzeniach ios. Po skończeniu projektu na studiach oraz otrzymaniu ocey planujemy dopracować projekt i wypuścic go do app stora.\r\n\r\nGra jest połączeniem zręcznościówka z grą logiczną. Gracz ma za zadanie przesuwać swoim awatarem w taki sposób żeby dotrzeć do wyznaczonego miejsca jednocześnie unikając przeszkód. Za każdym razem kiedy jego awatar się nie porusza może wybrać kierunek ruchu, ale po wybraniu awatar będzie się poruszał aż coś będzie blokować mu drogę. ta mechanika zmusza gracza do znalezienia najlepszej trasy do celu jednocześnie uważając na przeciwników którzy chcą zabić gracza zmuszając go do powrotu na pozycję startową.\r\n\r\nGra została napisana w taki sposób żeby ułatwić przyszły rozwój. Poziomy są zapisywane jako pliki binarne które mogą zostać wczytane podczas działania gry co umożliwia stworzenie edytora poziomów dla graczy.\r\n\r\n<h4>Autorzy</h4>\r\n<ul class=\"list-group list-group-flush grow\">\r\n<li>Artur Wenda</li>\r\n<li>Maciej Moryń</li>\r\n<li>Aleksandra Rawicz-Galińska</li>\r\n<li>Małgorzata Wieteska</li>\r\n</ul>', '2020-06-30 00:39:00');
+INSERT INTO `project` (`id`, `user_id`, `title`, `summary`, `description`, `date`, `updated`, `image`, `project_package_name`) VALUES
+(10, 2, 'Gra mobilna na platformę android \"Endless Runner\"', 'Gra mobilna bazowana na popularnej grze \"Geometry Dash\" pisana w pythonie. Modułowe nieskończone poziomy wraz z systemem najwyższych poziomów. Możliwa do uruchomienia na Androidzie oraz Windowsie!', 'Projekt został rozpoczęty jako zaliczenie przedmiotu na studiach \"Programowanie Komponentowe\". Głównym celem było napisanie gry mobilnej używając języka Python. Żeby to osiągnąć użyliśmy Kivy framework który jest open source biblioteką do pythona pozwalającą pisać aplikacje na różne platformy. Pomysł na grę był bazowany na popularnej grze \"Geometry Dash\"\r\n\r\nGra jest bardzo prosta, jedynym celem jest przetrwać jak najdłużej, a jak sama nazwa wskazuje gra nie ma końca. Gracz zdobywa punkty podczas gry wraz z upływem czasu ale gra także staje się coraz trudniejsza. Po przegranej na koniec można wpisać swój wynik na listę najlepszych wyników jeżeli osiągnęło się ich wystarczającą ilość.\r\n\r\nGra została zaprojektowana tak żeby przeszkody były modułami co pozwala dodawać/edytować przeszkody nawet w notatniku. W grze nie ma poziomów, poszczególne przeszkody są wczytywane losowo aż gracz przegra.\r\n\r\n<h4>Autorzy</h4>\r\n<ul class=\"list-group list-group-flush grow\">\r\n<li>Artur Wenda</li>\r\n<li>Maciej Moryń</li>\r\n<li>Kamil Chmielewski</li>\r\n<li>Paulina Osińska (Grafika)</li>\r\n</ul>', '2020-06-30 00:37:00', '2020-08-26 22:37:31', 'endlessrunner-5ef2152a0e9b4148250300-5f46c7e9b0097396210037.jpg', 'endlessrunner-exe-5ef2152a1e8a5662808150-5f46c80b71abb185590131.rar'),
+(11, 2, 'Gra mobilna \"Codname-G\" pisana w Unity', 'Oryginalny pomysł na grę zręcznościowo-logiczną stworzoną w zespole na studiach. Gra pisana głównie na platformę android z możliwością budowy na ios.', 'Projekt został rozpoczęty jako zaliczenie przedmiotu na studiach \"Projekt zespołowy\". Głównym celem było napisanie gry mobilnej w małym zespole używając Silnika Gier Unity. Główną platformą docelową jest był androib ale dzięki wybranemu silnikowi bardzo łatwo można zmodyfikować projekt żeby działał na urządzeniach ios. Po skończeniu projektu na studiach oraz otrzymaniu ocey planujemy dopracować projekt i wypuścic go do app stora.\r\n\r\nGra jest połączeniem zręcznościówka z grą logiczną. Gracz ma za zadanie przesuwać swoim awatarem w taki sposób żeby dotrzeć do wyznaczonego miejsca jednocześnie unikając przeszkód. Za każdym razem kiedy jego awatar się nie porusza może wybrać kierunek ruchu, ale po wybraniu awatar będzie się poruszał aż coś będzie blokować mu drogę. ta mechanika zmusza gracza do znalezienia najlepszej trasy do celu jednocześnie uważając na przeciwników którzy chcą zabić gracza zmuszając go do powrotu na pozycję startową.\r\n\r\nGra została napisana w taki sposób żeby ułatwić przyszły rozwój. Poziomy są zapisywane jako pliki binarne które mogą zostać wczytane podczas działania gry co umożliwia stworzenie edytora poziomów dla graczy.\r\n\r\n<h4>Autorzy</h4>\r\n<ul class=\"list-group list-group-flush grow\">\r\n<li>Artur Wenda</li>\r\n<li>Maciej Moryń</li>\r\n<li>Aleksandra Rawicz-Galińska</li>\r\n<li>Małgorzata Wieteska</li>\r\n</ul>', '2020-06-30 00:39:00', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
