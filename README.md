@@ -111,15 +111,18 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 ## Tabele
 
 ### project
-- id: int(11)
-- user_id: int(11)
-- title: varchar(255)
-- summary: varchar(255)
-- description: longtext
-- date: datetime
+*	id: _int(11)_
+*	user_id: _int(11)_
+*	title: _varchar(255)_
+*	summary: _varchar(255)_
+*	description: _longtext_
+*	date: _datetime_
+*	updated: _datetime_
+*	image: _varchar(255)_
+*	project_package_name: _varchar(255)_
 
 ### users
-- id: int(11)
-- username: varchar(180)
-- password: varchar(255)
-- roles: longtext
+*	id: _int(11)_
+*	username: _varchar(180)_
+*	roles: _longtext_
+*	password: _varchar(255)_
