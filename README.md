@@ -55,22 +55,38 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 ## Modele
 
 ### Project
-- id: int
-- title: string
-- summary: string 
-- description: string
-- date: DateTime
-- user: User
-- getTitle(): string?
-- setTitle(): void
-- getDescription(): string?
-- setDescription(): void
-- getDate(): DateTime
-- setDate(): void
-- getUser(): User?
-- setUser(): void
-- getSummary(): string?
-- setSummary(): void
+*	id: _int_
+*	user: _User_
+*	title: _string_
+*	summary: _string_
+*	description: _Text_
+*	date: _DateTime_
+*	updated: _DateTime?_
+*	image: _string?_
+*	imageFile: _File?_
+*	projectPackageName: _string?_
+*	projectPackage: _File?_
+*	getId(): _int?_
+*	getUser(): _User?_
+*	setUser(_User?_): _self_
+*	getTitle(): _string?_
+*	setTitle(_string_): _self_
+*	getSummary(): _string?_
+*	setSummary(_string_): _self_
+*	getDescription(): _string?_
+*	setDescription(_string_): _self_
+*	getDate(): _DateTimeInterface?_
+*	setDate(_DateTimeInterface_): _self_
+*	getUpdated(): _DateTimeInterface?_
+*	setUpdated(_DateTimeInterface?_): _void_
+*	getImage(): _string?_
+*	setImage(_string?_): _void_
+*	getImageFile(): _File?_
+*	setImageFile(_File?_): _void_
+*	getProjectPackageName(): _string?_
+*	setProjectPackageName(_string?_): _void_
+*	getProjectPackage(): _File?_
+*	setProjectPackage(_File?_): _void_
 
 ### User
 - id: int
