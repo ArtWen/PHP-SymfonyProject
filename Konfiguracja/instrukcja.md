@@ -37,6 +37,10 @@ Domyślnie w zrzucie bazy danych jest wpisany jeden użytkownik o prawach admini
 * <b>Login:</b> admin
 * <b>Hasło:</b> admin
 
+Zwykłego użytkownika można stworzyć za pomocą wbudowanej rejestracji lub zalogować się poprzez:
+* <b>Login:</b> user
+* <b>Hasło:</b> user
+
 ## Konfiguracja php
 Ważnym jest aby w php.ini używanej wersi php były dostępne rozszerzenia(extensions), przykładowa konfiguracja rozszerzeń dla której projekt działa poprawnie:
 - extension=bz2

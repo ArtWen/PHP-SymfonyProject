@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 31 Sie 2020, 21:06
+-- Czas generowania: 17 Wrz 2020, 17:14
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `php_symfony_project_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL,
+  `author_id` int(11) NOT NULL,
+  `project_id` int(11) NOT NULL,
+  `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `comment`
+--
+
+INSERT INTO `comment` (`id`, `author_id`, `project_id`, `text`, `date`) VALUES
+(14, 1, 10, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet finibus nisi. In in tortor turpis. Integer tincidunt velit ac metus blandit, nec rutrum enim bibendum. Ut faucibus elit tortor, et finibus nisl elementum sed. Vestibulum et tristique ', '2020-09-17 15:27:38'),
+(16, 2, 10, 'Testing administrator comment', '2020-09-17 17:12:58');
 
 -- --------------------------------------------------------
 
@@ -57,20 +79,29 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)',
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES
-(1, 'user', '[]', '$argon2id$v=19$m=65536,t=4,p=1$a3N1anJnR1RQeEZheFUvSA$ADSHAYaT7kdMpD05zkvcAyhS7iuRiqpekzay2kHyM10'),
-(2, 'admin', '[\"ROLE_ADMIN\"]', '$argon2id$v=19$m=65536,t=4,p=1$QW9ZRk9SVS5kSUdOWjg3SA$Q8JcIPxE+s0u0sUdVtS7hH7o5ovh/HrIC699JKdb7sc');
+INSERT INTO `user` (`id`, `username`, `roles`, `password`, `email`) VALUES
+(1, 'user', '[]', '$argon2id$v=19$m=65536,t=4,p=1$a3N1anJnR1RQeEZheFUvSA$ADSHAYaT7kdMpD05zkvcAyhS7iuRiqpekzay2kHyM10', 'user@user'),
+(2, 'admin', '[\"ROLE_ADMIN\"]', '$argon2id$v=19$m=65536,t=4,p=1$QW9ZRk9SVS5kSUdOWjg3SA$Q8JcIPxE+s0u0sUdVtS7hH7o5ovh/HrIC699JKdb7sc', 'admin@admin');
 
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_9474526CF675F31B` (`author_id`),
+  ADD KEY `IDX_9474526C166D1F9C` (`project_id`);
 
 --
 -- Indeksy dla tabeli `project`
@@ -91,6 +122,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT dla tabeli `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT dla tabeli `project`
 --
 ALTER TABLE `project`
@@ -100,11 +137,18 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ograniczenia dla zrzutów tabel
 --
+
+--
+-- Ograniczenia dla tabeli `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `FK_9474526C166D1F9C` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`),
+  ADD CONSTRAINT `FK_9474526CF675F31B` FOREIGN KEY (`author_id`) REFERENCES `user` (`id`);
 
 --
 -- Ograniczenia dla tabeli `project`
