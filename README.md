@@ -46,13 +46,14 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	Widok _search_, na którym można wyszukiwać projekty.
 *	Widok _about_, zawierający informacje o aplikacji oraz dane kontaktowe twórców.
 *	Widok _logowania_, za pomocą którego użytkownik może się zalogować do aplikacji.
+*	Widok _rejestracji_, na którym użytkownicy zakładają nowe konto.
 *	_Panel administracyjny projektów_, czyli lista projektów wraz z możliwością ich dodania, modyfikacji i usunięcia.
 *	_Widok edycji projektu_, gdzie można edytować i usunąć projekt.
 	
 ## Kontrolery
-* 	_ProjectController_, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt; pozwala również na wyszukiwanie projektów po tekście i podsumowaniu.
+* 	_ProjectController_, pozwalający wylistować listę wszystkich projektów oraz pokazać konretny projekt i jego komentarze; pozwala również na wyszukiwanie projektów po tekście i podsumowaniu; obsługuje dodawanie i usuwanie komentarzy.
 *	_AboutController_, odpowiedzialny za wyświetlenie strony about.
-*	_SecurityController_, obsługuje logowanie i wylogowywanie się na stronie.
+*	_SecurityController_, obsługuje logowanie i wylogowywanie się na stronie oraz rejestrację nowych użytkowników.
 *	_AdminPanelController_, pozwala na zarządzanie całą listą dodanych projektów, w tym listowanie, edycja, usunięcie, dodanie nowego.
 
 ## Modele
