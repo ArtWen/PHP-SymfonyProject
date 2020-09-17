@@ -1,0 +1,18 @@
+<h2>{{ project.getComments()|length }} Comments</h2>
+{% for comment in project.getComments() %}
+    <div class="hasMarginTop">
+        <div class="commentHeader">
+            <div><i class="fa fa-calendar"></i> {{ comment.date | format_datetime('long', 'medium', '', 'UTC') }} by <i class="fa fa-user"></i> {{ comment.author.username }}</div>
+            <div>
+                {% if comment.author == app.user or is_granted('ROLE_ADMIN') %}
+                    <a href=" {{ path('delete_comment', {id: comment.id})  }}" class="btn btn-lg btn-block btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i> {{ 'action.project_delete'|trans }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="commentText">{{ comment.text | markdown_to_html }}</div>
+    </div>
+{% else %}
+    Be first to comment!
+{% endfor %}
