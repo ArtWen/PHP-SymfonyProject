@@ -19,7 +19,10 @@
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-                <button class="btn btn-lg btn-primary hasMarginTop" type="submit">{{ 'security.login'|trans }}</button>
+                <div class="row hasMarginTop">
+                    <button class="btn btn-lg btn-primary hasMarginTop" type="submit">{{ 'security.login_button'|trans }}</button>
+                    <button class="btn btn-lg btn-primary hasMarginTop"><a href="{{ path('security_register') }}">{{ 'security.goto_register_button'|trans }}</a></button>
+                </div>
             </form>
         </div>
     </div>

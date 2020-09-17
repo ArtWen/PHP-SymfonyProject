@@ -3,11 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\Request;
 
 class SecurityController extends AbstractController
 {
@@ -72,5 +75,56 @@ class SecurityController extends AbstractController
         return new Response("<html><head></head><body>dodano administratora</body></html>");
     }
 
+    /**
+     * funkcja dodana przez Macieja Morynia
+     * @Route("login", name="security_login")
+     */
+    public function goToLogin(): Response
+    {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('index');
+        }
+
+        return $this->render('security/login.html.twig');
+    }
+
+    /**
+     * funkcja dodana przez Macieja Morynia
+     * @Route("register", name="security_register")
+     */
+    public function goToRegister(UserPasswordEncoderInterface $passwordEncoder, Request $request): Response
+    {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('index');
+        }
+
+        $showError = false;
+        $form = $this->createForm(RegisterType::class);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $password = $data['password'];
+            $c_password = $data['confirm_password'];
+            $showError = $c_password != $password;
+            if (!$showError) {
+                $user = new User();
+                $user->setUsername($data['username']);
+                $user->setEmail($data['email']);
+                $user->setPassword($passwordEncoder->encodePassword(
+                    $user, $password));
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
+                return $this->render('security/register_success.html.twig');
+            }
+        }
+
+        return $this->render('security/register.html.twig',[
+            'registerForm' => $form->createView(),
+            'showError' => $showError
+        ]);
+    }
 
 }

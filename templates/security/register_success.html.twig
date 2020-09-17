@@ -1,0 +1,16 @@
+{#TWIG CREATED BY MACIEJ MORYŃ#}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'security.register_label'|trans }}{% endblock %}
+
+{% block main %}
+
+    <div class="hasMarginTop">
+        {#    ALERT FROM BOOTSWATCH    #}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert"><a href="{{ path('security_login') }}">&times;</a></button>
+            {{ 'security.register_success'|trans }}
+        </div>
+    </div>
+
+{% endblock %}

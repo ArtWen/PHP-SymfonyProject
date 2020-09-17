@@ -1,0 +1,33 @@
+{#TWIG CREATED BY MACIEJ MORYŃ#}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'security.register_label'|trans }}{% endblock %}
+
+{% block main %}
+
+    {{ form_start(registerForm) }}
+        <div class="hasMarginTop">
+
+            {% if (showError) %}
+                <div class="hasMarginTop">
+                    {#          ALERT FROM BOOTSWATCH          #}
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ 'security.register_error'|trans }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <h1><b>{{ 'security.register_user'|trans }}</b></h1>
+
+            {{ form_widget(registerForm) }}
+
+            <div class="row hasMarginTop">
+                <button class="btn btn-lg btn-primary hasMarginTop" type="submit"><a href="{{ path('security_login') }}">{{ 'security.goto_login_button'|trans }}</a></button>
+                <button class="btn btn-lg btn-primary hasMarginTop" type="submit">{{ 'security.register_button'|trans }}</button>
+            </div>
+        </div>
+
+    {{  form_end(registerForm) }}
+
+{% endblock %}
