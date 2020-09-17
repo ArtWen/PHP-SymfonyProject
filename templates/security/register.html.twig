@@ -8,12 +8,29 @@
     {{ form_start(registerForm) }}
         <div class="hasMarginTop">
 
-            {% if (showError) %}
+            {% if (invalidUsername) %}
                 <div class="hasMarginTop">
                     {#          ALERT FROM BOOTSWATCH          #}
-                    <div class="alert alert-dismissible alert-danger">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{ 'security.register_error'|trans }}
+                    <div class="alert alert-danger">
+                        {{ 'security.register_username_error'|trans }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if (invalidEmail) %}
+                <div class="hasMarginTop">
+                    {#          ALERT FROM BOOTSWATCH          #}
+                    <div class="alert alert-danger">
+                        {{ 'security.register_email_error'|trans }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if (invalidPassword) %}
+                <div class="hasMarginTop">
+                    {#          ALERT FROM BOOTSWATCH          #}
+                    <div class="alert alert-danger">
+                        {{ 'security.register_password_error'|trans }}
                     </div>
                 </div>
             {% endif %}

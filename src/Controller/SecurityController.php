@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegisterType;
+use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -98,16 +99,25 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('index');
         }
 
-        $showError = false;
+        $invalidUsername = false;
+        $invalidEmail= false;
+        $invalidPassword = false;
+
         $form = $this->createForm(RegisterType::class);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+            $username = $data['username'];
+            $email = $data['email'];
             $password = $data['password'];
             $c_password = $data['confirm_password'];
-            $showError = $c_password != $password;
-            if (!$showError) {
+
+            $invalidUsername = $this->usernameExists($username);
+            $invalidEmail = $this->emailExists($email);
+            $invalidPassword = $password != $c_password;
+
+            if (!$invalidUsername && !$invalidEmail && !$invalidPassword) {
                 $user = new User();
                 $user->setUsername($data['username']);
                 $user->setEmail($data['email']);
@@ -123,8 +133,32 @@ class SecurityController extends AbstractController
 
         return $this->render('security/register.html.twig',[
             'registerForm' => $form->createView(),
-            'showError' => $showError
+            'invalidUsername' => $invalidUsername,
+            'invalidEmail' => $invalidEmail,
+            'invalidPassword' => $invalidPassword
         ]);
+    }
+
+    /**
+     * Funkcja dodana przez Macieja Morynia.
+     */
+    private function usernameExists(string $username): bool {
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(
+            ['username' => $username]
+        );
+
+        return $user != null;
+    }
+
+    /**
+     * Funkcja dodana przez Macieja Morynia.
+     */
+    private function emailExists(string $email): bool {
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(
+            ['email' => $email]
+        );
+
+        return $user != null;
     }
 
 }
