@@ -104,7 +104,11 @@ body {
 }
 
 .hasMarginTop {
-  margin-top: 16px;
+   margin-top: 16px;
+ }
+
+.hasMarginBottom {
+  margin-bottom: 16px;
 }
 
 .hasHorizontalPadding {
@@ -155,3 +159,23 @@ body {
 }
 
 //END MADE BY MACIEJ MORYŃ
+
+//Made by Artur Wenda
+.commentHeader{
+  padding: 8px;
+  background-color: #515960;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.commentText{
+  padding: 10px;
+  color: #f1f2f3;
+  background-color: #8e8a9b;
+}
+
+.commentText p{
+  margin-bottom: 0px;
+}

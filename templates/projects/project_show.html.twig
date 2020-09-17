@@ -6,7 +6,6 @@
     {#START MADE BY MACIEJ MORYŃ#}
     <div class="hasMarginTop">
         <div class="row">
-
             <div class="col70">
                 <h3><b>{{ project.title }}</b></h3>
                 <div><i class="fa fa-calendar"></i> {{ project.date | format_datetime('long', 'medium', '', 'UTC') }}</div>
@@ -15,6 +14,21 @@
                     <div class="hasMarginTop"><img class="imageLarge" src="{{ vich_uploader_asset(project,'imageFile') }}"></div>
                 {% endif %}
                 <div class="hasMarginTop">{{ project.description | markdown_to_html }}</div>
+
+                <div class="hasMarginTop hasMarginBottom">
+                    {% if app.user %}
+                        <h2>Leave a comment ;)</h2>
+                        {{  render(controller('App\\Controller\\ProjectController::createCommentForm', {'p': project}))  }}
+                    {% else %}
+                        <h2>You need to be logged in to comment!</h2>
+                        <a class="btn btn-lg btn-block btn-success" href="{{ path('app_login') }}">
+                            <i class="fa fa-sign-in-alt" aria-hidden="true"></i> {{ 'dropdown.login'|trans }}
+                        </a>
+                    {% endif %}
+
+                    {% include 'projects/comment.html.twig' %}
+
+                </div>
             </div>
 
             <div class="col30 hasHorizontalPadding">
@@ -32,7 +46,6 @@
                     </a>
                 {% endif %}
             </div>
-
         </div>
     </div>
     {#END MADE BY MACIEJ MORYŃ#}
