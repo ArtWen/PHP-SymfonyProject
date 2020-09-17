@@ -11,10 +11,12 @@ Członkowie grupy: Moryń Maciej, Wenda Artur
 	* iii. [Modele](#modele)
 		+ [Project](#project)
 		+ [User](#user)
+		+ [Comment](#comment)
 4. [Bazy Danych](#baza-danych)
 	* [Tabele](#tabele)
 		+ [Project](#project)
 		+ [Users](#users)
+		+ [Comments](#comments)
 
 # Informacje ogólne
 Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach, wraz z możliwością wyszukania projektów po tytule oraz podsumowaniu.
@@ -154,3 +156,10 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	username: _varchar(180)_
 *	roles: _longtext_
 *	password: _varchar(255)_
+
+### comments
+*	id: _int(11)_
+*	author_id: _int(11)_
+*	project_id: _int(11)_
+*	text: _varchar(255)_
+*	date: _datetime_
