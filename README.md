@@ -67,6 +67,7 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	imageFile: _File?_
 *	projectPackageName: _string?_
 *	projectPackage: _File?_
+*	comments: _Comment[]_
 *	getId(): _int?_
 *	getUser(): _User?_
 *	setUser(_User?_): _self_
@@ -88,16 +89,26 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	setProjectPackageName(_string?_): _void_
 *	getProjectPackage(): _File?_
 *	setProjectPackage(_File?_): _void_
+*	getComments(): _Comments[]_
+*	addComment(_Comment_): _self_
+*	removeComment(_Comment_): _self_
 
 ### User
 *	id: _int_
 *	username: _string_
+*	email: _string_
+*	comments: _Comment[]_
 *	roles: _Json_
 *	password: _string_
 *	projects: _Project[]_
 *	getId(): _int?_
 *	getUsername(): _string_
 *	setUsername(_string_): _self_
+*	getEmail(): _string_
+*	setEmail(_string_): _self_
+*	getComments(): _Comments[]_
+*	addComment(_Comment_): _self_
+*	removeComment(_Comment_): _self_
 *	getRoles(): _Array_
 *	setRoles(_Array_): _self_
 *	getPassword(): _string_
@@ -107,6 +118,22 @@ Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem 
 *	getProjects(): _Collection_
 *	addProject(_Project_): _self_
 *	removeProject(_Project_): _self_
+
+### Comment
+*	id: _int_
+*	text: _string_
+*	author: _User_
+*	project: _Project_
+*	date: _DateTime_
+*	getId(): _int_
+*	getText(): _string_
+*	setText(_string_): _self_
+*	getAuthor(): _User_
+*	setAuthor(_User_): _self_
+*	getProject(): _Project_
+*	setProject(_Project_): _self_
+*	getDate(): _DateTime_
+*	setDate(_DateTime_): _self_
 
 # Baza Danych
 ## Tabele
