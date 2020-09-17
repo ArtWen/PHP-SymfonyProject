@@ -214,6 +214,57 @@
         using Symfony framework. This site came to life as&#13;
         college project fot PHP MVC faculty.</target>
       </trans-unit>
+
+      <trans-unit id="security.register_label">
+        <source>security.register_label</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="security.register_user">
+        <source>security.register_user</source>
+        <target>Register user</target>
+      </trans-unit>
+      <trans-unit id="security.register_username_label">
+        <source>security.register_username_label</source>
+        <target>Username:</target>
+      </trans-unit>
+      <trans-unit id="security.register_email_label">
+        <source>security.register_email_label</source>
+        <target>E-mail:</target>
+      </trans-unit>
+      <trans-unit id="security.register_password_label">
+        <source>security.register_password_label</source>
+        <target>Password:</target>
+      </trans-unit>
+      <trans-unit id="security.register_confirm_password">
+        <source>security.register_confirm_password</source>
+        <target>Confirm password:</target>
+      </trans-unit>
+
+      <trans-unit id="security.login_button">
+        <source>security.login_button</source>
+        <target>LOGIN</target>
+      </trans-unit>
+      <trans-unit id="security.goto_login_button">
+        <source>security.goto_login_button</source>
+        <target>GO TO LOGIN</target>
+      </trans-unit>
+      <trans-unit id="security.register_button">
+        <source>security.register_button</source>
+        <target>REGISTER</target>
+      </trans-unit>
+      <trans-unit id="security.goto_register_button">
+        <source>security.goto_register_button</source>
+        <target>GO TO REGISTER</target>
+      </trans-unit>
+      <trans-unit id="security.register_success">
+        <source>security.register_success</source>
+        <target>Successful registered! Press X to continue!</target>
+      </trans-unit>
+      <trans-unit id="security.register_error">
+        <source>security.register_error</source>
+        <target>Invalid input data!</target>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>

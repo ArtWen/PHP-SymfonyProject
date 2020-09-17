@@ -44,6 +44,10 @@ class User implements UserInterface
     private $projects;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+    /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="author")
      */
     private $comments;
@@ -158,6 +162,15 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+    }
     /**
      * @return Collection|Comment[]
      */
@@ -185,7 +198,6 @@ class User implements UserInterface
                 $comment->setAuthor(null);
             }
         }
-
         return $this;
     }
 }
