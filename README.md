@@ -20,7 +20,7 @@ Członkowie grupy: Moryń Maciej, Wenda Artur
 
 # Informacje ogólne
 Aplikacja internetowa do umieszczania projektów z opisami i postów o projektach, wraz z możliwością wyszukania projektów po tytule oraz podsumowaniu.
-Użytkownicy mogą przeglądać wszystkie udostępnione opisy oraz pobierać pliki projektów (jeśli zostały dołączone), a administracja może dodawać, edytować lub usuwać posty.
+Użytkownicy mogą przeglądać wszystkie udostępnione opisy oraz pobierać pliki projektów (jeśli zostały dołączone) i dodawać komentarze, a administracja może dodawać, edytować lub usuwać posty. Komentarze mogą zostać usunięte jedynie przez administrację oraz autora komentarza.
 
 ## Konfiguracja i uruchamianie
 Informacje związane z konfigracją i ustawianiem lokalnego serwera z projektem można znaleźć tutaj: [instrukcja.md](/Konfiguracja/instrukcja.md)
