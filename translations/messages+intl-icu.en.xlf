@@ -260,9 +260,17 @@
         <source>security.register_success</source>
         <target>Successful registered! Press X to continue!</target>
       </trans-unit>
-      <trans-unit id="security.register_error">
-        <source>security.register_error</source>
-        <target>Invalid input data!</target>
+      <trans-unit id="security.register_username_error">
+        <source>security.register_username_error</source>
+        <target>Username already exists!</target>
+      </trans-unit>
+      <trans-unit id="security.register_email_error">
+        <source>security.register_email_error</source>
+        <target>Email already exists!</target>
+      </trans-unit>
+      <trans-unit id="security.register_password_error">
+        <source>security.register_password_error</source>
+        <target>Passwords don't match!</target>
       </trans-unit>
 
     </body>
