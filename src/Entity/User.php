@@ -170,6 +170,8 @@ class User implements UserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
     }
     /**
      * @return Collection|Comment[]
